@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import store from '../../store'
 import RecipeCard from "./../RecipeCard/RecipeCard";
 import "./Home.css";
 
 class Home extends Component {
   constructor(props) {
+    const reduxState = store.getState();
     super(props);
     this.state = {
-      recipes: []
+      recipes: reduxState.recipes
     };
   }
 
